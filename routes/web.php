@@ -7,4 +7,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/pessoas', [PessoasController::class, 'listarPessoas']);
+Route::get('/pessoas', [PessoasController::class, 'index']);
+
+Route::get('/pessoas/incluir', [PessoasController::class, 'create']);

@@ -9,9 +9,15 @@ class PessoasController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $pessoas = [
+            'Rômulo',
+            'Teste',
+            'João',
+        ];
+
+        return view('pessoas.index')->with('pessoas', $pessoas);
     }
 
     /**
@@ -19,7 +25,7 @@ class PessoasController extends Controller
      */
     public function create()
     {
-        //
+        return view('pessoas.create');
     }
 
     /**
