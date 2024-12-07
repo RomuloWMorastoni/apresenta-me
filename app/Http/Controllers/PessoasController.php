@@ -9,7 +9,7 @@ class PessoasController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request)
+    public function index()
     {
         $pessoas = [
             'Rômulo',
@@ -33,7 +33,15 @@ class PessoasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+            $nomePessoa = $request->input('nome');
+            $tipoPessoa = $request->input('tipo');
+            $documentoPessoa = $request->input('documento');
+            $emailPessoa = $request->input('email');
+            $telefonePessoa = $request->input('telefone');
+
+            \DB::insert('INSERT INTO pessoas (nome, tipo, documento, email, telefone) VALUES (?, ?, ?, ?, ?)', [$nomePessoa, $tipoPessoa, $documentoPessoa, $emailPessoa, $telefonePessoa]);
+                return redirect('/pessoas');
+            
     }
 
     /**

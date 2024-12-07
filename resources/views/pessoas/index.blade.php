@@ -4,7 +4,7 @@
 
     <ul class="list-group">
         @foreach($pessoas as $pessoa)
-        <li class="list-group-item"> {{$pessoa}} </li>
+        <li class="list-group-item"> {{ $pessoa }} </li>
         @endforeach    
     </ul>
 

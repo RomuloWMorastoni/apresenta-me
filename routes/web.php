@@ -10,3 +10,5 @@ Route::get('/', function () {
 Route::get('/pessoas', [PessoasController::class, 'index']);
 
 Route::get('/pessoas/incluir', [PessoasController::class, 'create']);
+
+Route::post('/pessoas/salvar', [PessoasController::class, 'store']);
